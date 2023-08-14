@@ -790,3 +790,70 @@ new \Kirki\Field\Repeater(
 		],
 	]
 );
+
+
+// Work Section
+new \Kirki\Section(
+	'stacky_work',
+	[
+		'title'       => esc_html__( 'Work Section', 'stacky' ),
+		'description' => esc_html__( 'Stacky Work Section', 'stacky' ),
+		'panel'       => 'stacky_panel',
+		'priority'    => 230,
+	]
+);
+
+
+// Skill Heading
+new \Kirki\Field\Text(
+	[
+		'settings' => 'work_heading_setting',
+		'label'    => esc_html__( 'Wiork Section Heading', 'stacky' ),
+		'section'  => 'stacky_work',
+		'default'  => esc_html__( 'OUR WORKS', 'stacky' ),
+		'priority' => 10,
+	]
+);
+
+// Work Section Content
+new \Kirki\Field\Textarea(
+	[
+		'settings'    => 'work_content_setting',
+		'label'       => esc_html__( 'Work Section Content', 'stacky' ),
+		'section'     => 'stacky_work',
+		'default'     => esc_html__( 'A desire to help and empower others between community contributors in technology began to grow in 2023.', 'stacky' ),
+	]
+);
+
+// Work Section portfolio
+new \Kirki\Field\Repeater(
+	[
+		'settings'     => 'work_repeater_setting',
+		'label'        => esc_html__( 'Portfolios', 'stacky' ),
+		'section'      => 'stacky_work',
+		'priority'     => 10,
+		'row_label'    => [
+			'type'  => 'field',
+			'value' => esc_html__( 'Portfolio', 'stacky' ),
+			'field' => 'port_name',
+		],
+		'button_label' => esc_html__( 'Add new portfolio ', 'stacky' ),
+		'fields'       => [
+			'port_name'   => [
+				'type'        => 'text',
+				'label'       => esc_html__( 'Portfolio Name', 'stacky' ),
+				'description' => esc_html__( '', 'stacky' ),
+				'default'     => '',
+			],
+			'port_url'    => [
+				'type'        => 'image',
+				'label'       => esc_html__( 'Portfolio Image', 'stacky' ),
+				'description' => esc_html__( '', 'stacky' ),
+				'default'     => '',
+				'choices'     => [
+					'save_as' => 'array',
+				],
+			],
+		],
+	]
+);
