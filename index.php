@@ -1,36 +1,7 @@
 <?php get_header(); ?>
 
 
-      <!-- Hero Area Start -->
-      <div id="hero-area" class="hero-area-bg">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-12 col-sm-12">
-              <div class="contents text-center">
-                <h2 class="head-title wow fadeInUp"><?php echo esc_html(get_theme_mod('hero_text_setting')); ?></h2>
-                <div class="header-button wow fadeInUp" data-wow-delay="0.3s">
-                  <?php if(true == get_theme_mod('hero_button_switch_setting', 'on')){
-                    $btn_name = esc_html(get_theme_mod('hero_button_name_setting'));
-                    $btn_link = esc_url(get_theme_mod('hero_button_url_setting')); 
-                    
-                  ?>
-                    <a href="<?php echo $btn_link; ?>" class="btn btn-common"><?php echo $btn_name; ?></a>
-
-                  <?php }
-                  ?>
-                    
-                  
-                </div>
-              </div>
-              <div class="img-thumb text-center wow fadeInUp" data-wow-delay="0.6s">
-                <?php $hero_image = get_theme_mod('hero_image_setting_id'); ?>
-                <img class="img-fluid" src="<?php echo esc_url($hero_image['url']);?>" alt="">
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- Hero Area End -->
+    <?php get_template_part('/templates/hero'); ?>
 
     </header>
     <!-- Header Area wrapper End -->
@@ -40,125 +11,9 @@
     
     <?php get_template_part('/templates/services'); ?>
 
-    <!-- Start Video promo Section -->
-    <section class="video-promo section-padding">
-      <div class="overlay"></div>
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12 col-sm-12">
-            <div class="video-promo-content text-center wow fadeInUp" data-wow-delay="0.3s">
-              <a href="https://www.youtube.com/watch?v=yP6kdOZHids" class="video-popup"><i class="lni-film-play"></i></a>
-              <h2 class="mt-3 wow zoomIn" data-wow-duration="1000ms" data-wow-delay="100ms">Watch Video</h2>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- End Video Promo Section -->
+    <?php get_template_part('/templates/video-promo'); ?>
 
-    <!-- Team Section Start -->
-    <section id="team" class="section-padding text-center">
-      <div class="container">
-        <div class="section-header text-center">
-          <h2 class="section-title wow fadeInDown" data-wow-delay="0.3s">Meet our team</h2>
-          <p>A desire to help and empower others between community contributors in technology <br> began to grow in 2020.</p>
-        </div>
-        <div class="row">
-          <div class="col-sm-6 col-md-6 col-lg-3">
-            <!-- Team Item Starts -->
-            <div class="team-item text-center wow fadeInRight" data-wow-delay="0.3s">
-              <div class="team-img">
-                <img class="img-fluid" src="<?php echo get_template_directory_uri(  ); ?>/assets/img/team/team-01.png" alt="">
-                <div class="team-overlay">
-                  <div class="overlay-social-icon text-center">
-                    <ul class="social-icons">
-                      <li><a href="#"><i class="lni-facebook-filled" aria-hidden="true"></i></a></li>
-                      <li><a href="#"><i class="lni-twitter-filled" aria-hidden="true"></i></a></li>
-                      <li><a href="#"><i class="lni-instagram-filled" aria-hidden="true"></i></a></li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-              <div class="info-text">
-                <h3><a href="#">David Smith</a></h3>
-                <p>Chief Operating Officer</p>
-              </div>
-            </div>
-            <!-- Team Item Ends -->
-          </div>
-          <div class="col-sm-6 col-md-6 col-lg-3">
-            <!-- Team Item Starts -->
-            <div class="team-item text-center wow fadeInRight" data-wow-delay="0.6s">
-              <div class="team-img">
-                <img class="img-fluid" src="<?php echo get_template_directory_uri(  ); ?>/assets/img/team/team-02.png" alt="">
-                <div class="team-overlay">
-                  <div class="overlay-social-icon text-center">
-                    <ul class="social-icons">
-                      <li><a href="#"><i class="lni-facebook-filled" aria-hidden="true"></i></a></li>
-                      <li><a href="#"><i class="lni-twitter-filled" aria-hidden="true"></i></a></li>
-                      <li><a href="#"><i class="lni-instagram-filled" aria-hidden="true"></i></a></li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-              <div class="info-text">
-                <h3><a href="#">Eric Peterson</a></h3>
-                <p>Product Designer</p>
-              </div>
-            </div>
-            <!-- Team Item Ends -->
-          </div>
-
-          <div class="col-sm-6 col-md-6 col-lg-3">
-            <!-- Team Item Starts -->
-            <div class="team-item text-center wow fadeInRight" data-wow-delay="0.9s">
-              <div class="team-img">
-                <img class="img-fluid" src="<?php echo get_template_directory_uri(  ); ?>/assets/img/team/team-03.png" alt="">
-                <div class="team-overlay">
-                  <div class="overlay-social-icon text-center">
-                    <ul class="social-icons">
-                      <li><a href="#"><i class="lni-facebook-filled" aria-hidden="true"></i></a></li>
-                      <li><a href="#"><i class="lni-twitter-filled" aria-hidden="true"></i></a></li>
-                      <li><a href="#"><i class="lni-instagram-filled" aria-hidden="true"></i></a></li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-              <div class="info-text">
-                <h3><a href="#">Durwin Babb</a></h3>
-                <p>Lead Designer</p>
-              </div>
-            </div>
-            <!-- Team Item Ends -->
-          </div>
-
-          <div class="col-sm-6 col-md-6 col-lg-3">
-            <!-- Team Item Starts -->
-            <div class="team-item text-center wow fadeInRight" data-wow-delay="1.2s">
-              <div class="team-img">
-                <img class="img-fluid" src="<?php echo get_template_directory_uri(  ); ?>/assets/img/team/team-04.png" alt="">
-                <div class="team-overlay">
-                  <div class="overlay-social-icon text-center">
-                    <ul class="social-icons">
-                      <li><a href="#"><i class="lni-facebook-filled" aria-hidden="true"></i></a></li>
-                      <li><a href="#"><i class="lni-twitter-filled" aria-hidden="true"></i></a></li>
-                      <li><a href="#"><i class="lni-instagram-filled" aria-hidden="true"></i></a></li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-              <div class="info-text">
-                <h3><a href="#">Marijn Otte</a></h3>
-                <p>Front-end Developer</p>
-              </div>
-            </div>
-            <!-- Team Item Ends -->
-          </div>
-          
-        </div>
-      </div>
-    </section>
-    <!-- Team Section End -->
+    <?php get_template_part('/templates/team'); ?>
 
     <!-- Counter Section Start -->
     <section id="counter" class="section-padding">
@@ -638,6 +493,7 @@
               <img class="img-fluid"  src="<?php echo get_template_directory_uri(  ); ?>/assets/img/clients/img4.png" alt="">
             </div>
           </div>
+          
         </div>
       </div>
     </div>

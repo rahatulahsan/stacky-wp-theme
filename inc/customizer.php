@@ -430,3 +430,245 @@ new \Kirki\Field\Repeater(
 		],
 	]
 );
+
+
+
+// Video Section
+new \Kirki\Section(
+	'stacky_videos',
+	[
+		'title'       => esc_html__( 'Video Section', 'stacky' ),
+		'description' => esc_html__( 'Stacky Video Section', 'stacky' ),
+		'panel'       => 'stacky_panel',
+		'priority'    => 190,
+	]
+);
+
+// Video Heading
+new \Kirki\Field\Text(
+	[
+		'settings' => 'video_heading_setting',
+		'label'    => esc_html__( 'Video Title', 'stacky' ),
+		'section'  => 'stacky_videos',
+		'default'  => esc_html__( 'WATCH VIDEO', 'stacky' ),
+		'priority' => 10,
+		'transport' => 'postMessage',
+		'js_vars' => array(
+			array(
+				'element' => '.video-promo .video-promo-content h2',
+				'function' => 'html'
+			)
+		)
+	]
+);
+
+
+// Video Link
+new \Kirki\Field\URL(
+	[
+		'settings' => 'video_url_setting',
+		'label'    => esc_html__( 'Video Link', 'stacky' ),
+		'section'  => 'stacky_videos',
+		'default'  => 'https://www.youtube.com/watch?v=yP6kdOZHids',
+		'priority' => 10,
+	]
+);
+
+// Video Section Background
+new \Kirki\Field\Background(
+	[
+		'settings'    => 'video_background_setting',
+		'label'       => esc_html__( 'Background Image', 'stacky' ),
+		'description' => esc_html__( 'Set background image for video setcion', 'stacky' ),
+		'section'     => 'stacky_videos',
+		'default'     => [
+			'background-color'      => '',
+			'background-image'      => '',
+			'background-repeat'     => 'no-repeat',
+			'background-position'   => 'center center',
+			'background-size'       => 'cover',
+			'background-attachment' => 'no-scroll',
+		],
+		'transport'   => 'auto',
+		'output'      => [
+			[
+				'element' => '.video-promo',
+			],
+		],
+	]
+);
+
+
+
+// Team Section
+new \Kirki\Section(
+	'stacky_teams',
+	[
+		'title'       => esc_html__( 'Team Section', 'stacky' ),
+		'description' => esc_html__( 'Stacky Team Section', 'stacky' ),
+		'panel'       => 'stacky_panel',
+		'priority'    => 200,
+	]
+);
+
+// Video Heading
+new \Kirki\Field\Text(
+	[
+		'settings' => 'team_heading_setting',
+		'label'    => esc_html__( 'Team Section Heading', 'stacky' ),
+		'section'  => 'stacky_teams',
+		'default'  => esc_html__( 'MEET OUR TEAM', 'stacky' ),
+		'priority' => 10,
+		'transport' => 'postMessage',
+		'js_vars' => array(
+			array(
+				'element' => '.section-title',
+				'function' => 'html'
+			)
+		)
+	]
+);
+
+// Team Section Heading Content
+new \Kirki\Field\Textarea(
+	[
+		'settings'    => 'team_content_setting',
+		'label'       => esc_html__( 'Team Heading Content', 'stacky' ),
+		'section'     => 'stacky_teams',
+		'default'     => esc_html__( 'A desire to help and empower others between community contributors in technology began to grow in 2023.', 'stacky' ),
+		'transport' => 'postMessage',
+		'js_vars' => array(
+			array(
+				'element' => '.section-header p',
+				'function' => 'html'
+			)
+		)
+	]
+);
+
+
+// Team Mebers List
+new \Kirki\Field\Repeater(
+	[
+		'settings'     => 'team_repeater_setting',
+		'label'        => esc_html__( 'Team Members', 'stacky' ),
+		'section'      => 'stacky_teams',
+		'priority'     => 10,
+		'row_label'    => [
+			'type'  => 'field',
+			'value' => esc_html__( 'Member', 'stacky' ),
+			'field' => 'link_text',
+		],
+		'button_label' => esc_html__( 'Add new member ', 'stacky' ),
+		'fields'       => [
+			'mem_name'   => [
+				'type'        => 'text',
+				'label'       => esc_html__( 'Member Name', 'stacky' ),
+				'description' => esc_html__( '', 'stacky' ),
+				'default'     => 'DAVID SMITH',
+			],
+			'mem_desig'    => [
+				'type'        => 'text',
+				'label'       => esc_html__( 'Designation', 'stacky' ),
+				'description' => esc_html__( '', 'stacky' ),
+				'default'     => 'Chief Operating Officer',
+			],
+			'mem_img'    => [
+				'type'        => 'image',
+				'label'       => esc_html__( 'Memeber Photo', 'stacky' ),
+				'description' => esc_html__( '', 'stacky' ),
+				'default'     => '',
+				'choices'     => [
+					'save_as' => 'array',
+				],
+			],
+			'fb_url'    => [
+				'type'        => 'url',
+				'label'       => esc_html__( 'Facebook Link', 'stacky' ),
+				'description' => esc_html__( '', 'stacky' ),
+				'default'     => 'https://www.facebook.com',
+			],
+			'twitter_url'    => [
+				'type'        => 'url',
+				'label'       => esc_html__( 'Facebook Link', 'stacky' ),
+				'description' => esc_html__( '', 'stacky' ),
+				'default'     => 'https://www.twitter.com',
+			],
+			'insta_url'    => [
+				'type'        => 'url',
+				'label'       => esc_html__( 'Facebook Link', 'stacky' ),
+				'description' => esc_html__( '', 'stacky' ),
+				'default'     => 'https://www.instagram.com',
+			],
+
+		],
+	]
+);
+
+
+// Counter Section
+new \Kirki\Section(
+	'stacky_counter',
+	[
+		'title'       => esc_html__( 'Counter Section', 'stacky' ),
+		'description' => esc_html__( 'Stacky Counter Section', 'stacky' ),
+		'panel'       => 'stacky_panel',
+		'priority'    => 210,
+	]
+);
+
+// Counter Items
+new \Kirki\Field\Repeater(
+	[
+		'settings'     => 'counter_repeater_setting',
+		'label'        => esc_html__( 'Counter Items', 'stacky' ),
+		'section'      => 'stacky_counter',
+		'priority'     => 10,
+		'row_label'    => [
+			'type'  => 'field',
+			'value' => esc_html__( 'Counter Item', 'stacky' ),
+			'field' => 'coun_text',
+		],
+		'button_label' => esc_html__( '"Add new item ', 'stacky' ),
+		'default'      => [
+			[
+				'coun__text'   => esc_html__( 'Users', 'stacky' ),
+			],
+			[
+				'coun__text'   => esc_html__( 'Positive Reviews', 'stacky' ),
+			],
+			[
+				'coun__text'   => esc_html__( 'Downloads', 'stacky' ),
+			],
+			[
+				'coun__text'   => esc_html__( 'Followers', 'stacky' ),
+			],
+		],
+		'fields'       => [
+			'coun__text'   => [
+				'type'        => 'text',
+				'label'       => esc_html__( 'Item Name', 'stacky' ),
+				'description' => esc_html__( '', 'stacky' ),
+				'default'     => '',
+			],
+			'coun__number'   => [
+				'type'        => 'text',
+				'label'       => esc_html__( 'Item Counter No', 'stacky' ),
+				'description' => esc_html__( '', 'stacky' ),
+				'default'     => '',
+			],
+			'coun__icon'   => [
+				'type'        => 'select',
+				'label'       => esc_html__( 'Item icon', 'stacky' ),
+				'description' => esc_html__( '', 'stacky' ),
+				'default'     => '',
+				'choices'     => [
+					'lni-users' => esc_html__( 'User', 'kirki' ),
+					'lni-emoji-smile' => esc_html__( 'Smile', 'kirki' ),
+					'lni-download' => esc_html__( 'Download', 'kirki' ),
+					'lni-thumbs-up' => esc_html__( 'Thumb', 'kirki' ),
+				],
+			],
+		],
+	]
+);

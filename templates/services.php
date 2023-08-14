@@ -17,11 +17,11 @@
           <div class="col-md-6 col-lg-4 col-xs-12">
             <div class="services-item wow fadeInRight" data-wow-delay="0.3s">
               <div class="icon">
-                <i class="<?php echo $services_item['item_icon']; ?>"></i>
+                <i class="<?php echo $services_item['s_item_icon']; ?>"></i>
               </div>
               <div class="services-content">
-                <h3><a href="#"><?php echo $services_item['item_text']; ?></a></h3>
-                <p><?php echo $services_item['item_content']; ?></p>
+                <h3><a href="#"><?php echo $services_item['s_item_text']; ?></a></h3>
+                <p><?php echo $services_item['s_item_content']; ?></p>
               </div>
             </div>
           </div>
