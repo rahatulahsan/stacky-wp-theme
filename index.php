@@ -7,13 +7,24 @@
           <div class="row">
             <div class="col-md-12 col-sm-12">
               <div class="contents text-center">
-                <h2 class="head-title wow fadeInUp">We Discover, Design & Build Digital <br> Presence of Businesses</h2>
+                <h2 class="head-title wow fadeInUp"><?php echo esc_html(get_theme_mod('hero_text_setting')); ?></h2>
                 <div class="header-button wow fadeInUp" data-wow-delay="0.3s">
-                  <a href="#services" class="btn btn-common">Explore</a>
+                  <?php if(true == get_theme_mod('hero_button_switch_setting', 'on')){
+                    $btn_name = esc_html(get_theme_mod('hero_button_name_setting'));
+                    $btn_link = esc_url(get_theme_mod('hero_button_url_setting')); 
+                    
+                  ?>
+                    <a href="<?php echo $btn_link; ?>" class="btn btn-common"><?php echo $btn_name; ?></a>
+
+                  <?php }
+                  ?>
+                    
+                  
                 </div>
               </div>
               <div class="img-thumb text-center wow fadeInUp" data-wow-delay="0.6s">
-                <img class="img-fluid" src="<?php echo get_template_directory_uri(  ); ?>/assets/img/hero-1.png" alt="">
+                <?php $hero_image = get_theme_mod('hero_image_setting_id'); ?>
+                <img class="img-fluid" src="<?php echo esc_url($hero_image['url']);?>" alt="">
               </div>
             </div>
           </div>
@@ -30,41 +41,28 @@
           <div class="col-lg-6 col-md-12 col-sm-12">
             <div class="text-wrapper">
               <div>
-                <h2 class="title-hl wow fadeInLeft" data-wow-delay="0.3s">We are helping to grow <br> your business.</h2>
-                <p class="mb-4">A digital studio specialising in User Experience & eCommerce, we combine innovation with digital craftsmanship to help brands fulfill their potential.</p>
-                <a href="#" class="btn btn-common">More About Us</a>
+                <h2 class="title-hl wow fadeInLeft" data-wow-delay="0.3s"><?php echo get_theme_mod('about_text_setting'); ?></h2>
+                <p class="mb-4"><?php echo esc_html(get_theme_mod('about_textarea_setting')); ?></p>
+                <a href="<?php echo esc_url(get_theme_mod('about_button_url_setting')); ?>" class="btn btn-common"><?php echo esc_html(get_theme_mod('about_button_name_setting')); ?></a>
               </div>
             </div>
           </div>
           <div class="col-lg-6 col-md-12 col-sm-12 padding-none feature-bg">
             <div class="feature-thumb">
+
+              <?php $about_items = get_theme_mod('about_section_repeater'); ?>
+              
+              <?php foreach($about_items as $item) : ?>
               <div class="feature-item wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="300ms">
                 <div class="icon">
-                  <i class="lni-microphone"></i>
+                  <i class="<?php echo $item['item_icon']; ?>"></i>
                 </div>
                 <div class="feature-content">
-                  <h3>What we do</h3>
-                  <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia con- sequuntur magni dolores </p>
+                  <h3><?php echo $item['item_text']; ?></h3>
+                  <p><?php echo $item['item_content']; ?> </p>
                 </div>
               </div>
-              <div class="feature-item wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="500ms">
-                <div class="icon">
-                  <i class="lni-users"></i>
-                </div>
-                <div class="feature-content">
-                  <h3>Meet our team</h3>
-                  <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia con- sequuntur magni dolores </p>
-                </div>
-              </div>
-              <div class="feature-item wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="700ms">
-                <div class="icon">
-                  <i class="lni-medall-alt"></i>
-                </div>
-                <div class="feature-content">
-                  <h3>Our Creation</h3>
-                  <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia con- sequuntur magni dolores </p>
-                </div>
-              </div>
+              <?php endforeach; ?>
             </div>
           </div>
         </div>
