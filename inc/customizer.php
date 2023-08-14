@@ -857,3 +857,85 @@ new \Kirki\Field\Repeater(
 		],
 	]
 );
+
+
+// Review Section
+new \Kirki\Section(
+	'stacky_review',
+	[
+		'title'       => esc_html__( 'Review Section', 'stacky' ),
+		'description' => esc_html__( 'Stacky review Section', 'stacky' ),
+		'panel'       => 'stacky_panel',
+		'priority'    => 240,
+	]
+);
+
+// Review Section Backgroud Image
+new \Kirki\Field\Background(
+	[
+		'settings'    => 'review_background_setting',
+		'label'       => esc_html__( 'Background Image', 'stacky' ),
+		'description' => esc_html__( '', 'stacky' ),
+		'section'     => 'stacky_review',
+		'default'     => [
+			'background-color'      => '',
+			'background-image'      => '',
+			'background-repeat'     => 'no-repeat',
+			'background-position'   => 'center center',
+			'background-size'       => 'cover',
+			'background-attachment' => 'no-scroll',
+		],
+		'transport'   => 'auto',
+		'output'      => [
+			[
+				'element' => '.testimonial',
+			],
+		],
+	]
+);
+
+
+// Review Items
+new \Kirki\Field\Repeater(
+	[
+		'settings'     => 'review_repeater_setting',
+		'label'        => esc_html__( 'Repeater Control', 'stacky' ),
+		'section'      => 'stacky_review',
+		'priority'     => 10,
+		'row_label'    => [
+			'type'  => 'field',
+			'value' => esc_html__( 'Review', 'stacky' ),
+			'field' => 'rev_name',
+		],
+		'button_label' => esc_html__( 'Add new review', 'stacky' ),
+		'fields'       => [
+			'rev_name'   => [
+				'type'        => 'text',
+				'label'       => esc_html__( 'Reviewer Name', 'stacky' ),
+				'description' => esc_html__( '', 'stacky' ),
+				'default'     => '',
+			],
+			'rev_desi'   => [
+				'type'        => 'text',
+				'label'       => esc_html__( 'Reviewer Designation', 'stacky' ),
+				'description' => esc_html__( '', 'stacky' ),
+				'default'     => '',
+			],
+			'rev_content'   => [
+				'type'        => 'textarea',
+				'label'       => esc_html__( 'Review Content', 'stacky' ),
+				'description' => esc_html__( '', 'stacky' ),
+				'default'     => '',
+			],
+			'rev_image'    => [
+				'type'        => 'image',
+				'label'       => esc_html__( 'Reviewer Image', 'stacky' ),
+				'description' => esc_html__( '', 'stacky' ),
+				'default'     => '',
+				'choices'     => [
+					'save_as' => 'array',
+				],
+			],
+		],
+	]
+);
