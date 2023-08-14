@@ -15,63 +15,7 @@
 
     <?php get_template_part('/templates/team'); ?>
 
-    <!-- Counter Section Start -->
-    <section id="counter" class="section-padding">
-      <div class="overlay"></div>
-      <div class="container">
-        <div class="row justify-content-between">
-          <div class="col-lg-12 col-md-12 col-xs-12">
-            <div class="row">
-              <!-- Start counter -->
-              <div class="col-lg-3 col-md-6 col-xs-12">
-                <div class="counter-box wow fadeInUp" data-wow-delay="0.2s">
-                  <div class="icon-o"><i class="lni-users"></i></div>
-                  <div class="fact-count">
-                    <h3><span class="counter">23576</span></h3>
-                    <p>Users</p>
-                  </div>
-                </div>
-              </div>
-              <!-- End counter -->
-              <!-- Start counter -->
-              <div class="col-lg-3 col-md-6 col-xs-12">
-                <div class="counter-box wow fadeInUp" data-wow-delay="0.4s">
-                  <div class="icon-o"><i class="lni-emoji-smile"></i></div>
-                  <div class="fact-count">
-                    <h3><span class="counter">2124</span></h3>
-                    <p>Positive Reviews</p>
-                  </div>
-                </div>
-              </div>
-              <!-- End counter -->
-              <!-- Start counter -->
-              <div class="col-lg-3 col-md-6 col-xs-12">
-                <div class="counter-box wow fadeInUp" data-wow-delay="0.6s">
-                  <div class="icon-o"><i class="lni-download"></i></div>
-                  <div class="fact-count">
-                    <h3><span class="counter">54598</span></h3>
-                    <p>Downloads</p>
-                  </div>
-                </div>
-              </div>
-              <!-- End counter -->
-              <!-- Start counter -->
-              <div class="col-lg-3 col-md-6 col-xs-12">
-                <div class="counter-box wow fadeInUp" data-wow-delay="0.8s">
-                  <div class="icon-o"><i class="lni-thumbs-up"></i></div>
-                  <div class="fact-count">
-                    <h3><span class="counter">3212</span></h3>
-                    <p>Followers</p>
-                  </div>
-                </div>
-              </div>
-              <!-- End counter -->
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- Counter Section End -->
+    <?php get_template_part('/templates/counter'); ?>
 
     <!-- Pricing section Start --> 
     <section id="pricing" class="section-padding bg-gray">
@@ -143,48 +87,7 @@
     </section>
     <!-- Pricing Table Section End -->
 
-    <div class="skill-area section-padding">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-6 col-md-12 col-xs-12 wow fadeInLeft" data-wow-delay="0.3s">
-            <img class="img-fluid" src="<?php echo get_template_directory_uri(  ); ?>/assets/img/about/img-1.jpg" alt="" >
-          </div>
-          <div class="col-lg-6 col-md-12 col-xs-12 info wow fadeInRight" data-wow-delay="0.3s">
-            <div class="site-heading">
-              <h2 class="section-title">Our <span>Skill</span></h2>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus architecto laudantium dolorem, aut aspernatur modi minima alias provident obcaecati! Minima odio porro nemo magnam dolore minus asperiores veniam dolorum est!
-              </p>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas, nesciunt possimus quaerat ipsam, corporis architecto aspernatur non aut! Dolorum consectetur placeat excepturi, perspiciatis sunt.
-              </p>
-            </div>
-            <div class="skills-section">
-              <!-- Progress Bar Start -->
-              <div class="progress-box">
-                <h5>Strategy &amp; Analysis <span class="pull-right">88%</span></h5>
-                <div class="progress" style="opacity: 1; left: 0px;">
-                  <div class="progress-bar" role="progressbar" data-width="87" style="width: 87%;"></div>
-                </div>
-              </div>
-              <div class="progress-box">
-                <h5>Eeconomic growth <span class="pull-right">95%</span></h5>
-                <div class="progress" style="opacity: 1; left: 0px;">
-                  <div class="progress-bar" role="progressbar" data-width="96" style="width: 96%;"></div>
-                </div>
-              </div>
-              <div class="progress-box">
-                <h5>Achieves goals <span class="pull-right">70%</span></h5>
-                <div class="progress" style="opacity: 1; left: 0px;">
-                  <div class="progress-bar" role="progressbar" data-width="52" style="width: 52%;"></div>
-                </div>
-              </div>
-              <!-- End Progressbar -->
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+    <?php get_template_part('/templates/skills'); ?>
     
     <!-- Portfolio Section -->
     <section id="portfolios" class="section-padding">

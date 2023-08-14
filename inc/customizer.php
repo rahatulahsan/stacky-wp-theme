@@ -511,7 +511,7 @@ new \Kirki\Section(
 	]
 );
 
-// Video Heading
+// Team Heading
 new \Kirki\Field\Text(
 	[
 		'settings' => 'team_heading_setting',
@@ -617,6 +617,30 @@ new \Kirki\Section(
 	]
 );
 
+// Counter Section Background
+new \Kirki\Field\Background(
+	[
+		'settings'    => 'counter_background_setting',
+		'label'       => esc_html__( 'Background Image', 'stacky' ),
+		'description' => esc_html__( '', 'stacky' ),
+		'section'     => 'stacky_counter',
+		'default'     => [
+			'background-color'      => '',
+			'background-image'      => '',
+			'background-repeat'     => 'no-repeat',
+			'background-position'   => 'center center',
+			'background-size'       => 'cover',
+			'background-attachment' => 'no-scroll',
+		],
+		'transport'   => 'auto',
+		'output'      => [
+			[
+				'element' => '#counter',
+			],
+		],
+	]
+);
+
 // Counter Items
 new \Kirki\Field\Repeater(
 	[
@@ -667,6 +691,100 @@ new \Kirki\Field\Repeater(
 					'lni-emoji-smile' => esc_html__( 'Smile', 'kirki' ),
 					'lni-download' => esc_html__( 'Download', 'kirki' ),
 					'lni-thumbs-up' => esc_html__( 'Thumb', 'kirki' ),
+				],
+			],
+		],
+	]
+);
+
+
+// Skill Section
+new \Kirki\Section(
+	'stacky_skill',
+	[
+		'title'       => esc_html__( 'Skill Section', 'stacky' ),
+		'description' => esc_html__( 'Stacky Skill Section', 'stacky' ),
+		'panel'       => 'stacky_panel',
+		'priority'    => 220,
+	]
+);
+
+
+// Skill Heading
+new \Kirki\Field\Text(
+	[
+		'settings' => 'skill_heading_setting',
+		'label'    => esc_html__( 'Skill Section Heading', 'stacky' ),
+		'section'  => 'stacky_skill',
+		'default'  => esc_html__( 'OUR SKILL', 'stacky' ),
+		'priority' => 10,
+	]
+);
+
+// Skill Section Content
+new \Kirki\Field\Textarea(
+	[
+		'settings'    => 'skill_content_setting',
+		'label'       => esc_html__( 'Skill Section Content', 'stacky' ),
+		'section'     => 'stacky_skill',
+		'default'     => esc_html__( '', 'stacky' ),
+	]
+);
+
+// Skill Section Image
+new \Kirki\Field\Image(
+	[
+		'settings'    => 'skill_image_setting',
+		'label'       => esc_html__( 'Skill Left Image', 'stacky' ),
+		'description' => esc_html__( '', 'stacky' ),
+		'section'     => 'stacky_skill',
+		'default'     => '',
+		'choices'     => [
+			'save_as' => 'array',
+		],
+	]
+);
+
+// Skill Counter
+new \Kirki\Field\Repeater(
+	[
+		'settings'     => 'skill_repeater_setting',
+		'label'        => esc_html__( 'Skill Lists', 'stacky' ),
+		'section'      => 'stacky_skill',
+		'priority'     => 10,
+		'row_label'    => [
+			'type'  => 'field',
+			'value' => esc_html__( 'Skill', 'stacky' ),
+			'field' => 'skill_name',
+		],
+		'button_label' => esc_html__( 'Add new skill ', 'stacky' ),
+		'default'      => [
+			[
+				'skill_name'   => esc_html__( 'STRATEGY & ANALYSIS', 'stacky' ),
+			],
+			[
+				'skill_name'   => esc_html__( 'EECONOMIC GROWTH', 'stacky' ),
+			],
+			[
+				'skill_name'   => esc_html__( 'ACHIEVES GOALS', 'stacky' ),
+			],
+		],
+		'fields'       => [
+			'skill_name'   => [
+				'type'        => 'text',
+				'label'       => esc_html__( 'Skill Name', 'stacky' ),
+				'description' => esc_html__( '', 'stacky' ),
+				'default'     => '',
+			],
+			'skill_percentage'    => [
+				'type'        => 'number',
+				'label'       => esc_html__( 'Skill Percentage', 'stacky' ),
+				'description' => esc_html__( '', 'stacky' ),
+				'default'     => '',
+				'choices'  => [
+					'min'  => 10,
+					'max'  => 100,
+					'step' => 1,
 				],
 			],
 		],
