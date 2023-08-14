@@ -197,12 +197,14 @@ new \Kirki\Field\Text(
 		'transport' => 'postMessage',
 		'js_vars' => array(
 			array(
-				'element' => '.title-h1',
+				'element' => '.title-hl',
 				'function' => 'html'
 			)
 		)
 	]
 );
+
+
 
 // About Section Content
 new \Kirki\Field\Textarea(
@@ -232,6 +234,7 @@ new \Kirki\Field\Text(
 	]
 );
 
+
 // About Section Button URL
 new \Kirki\Field\URL(
 	[
@@ -243,6 +246,7 @@ new \Kirki\Field\URL(
 		'transport' => 'postMessage',
 	]
 );
+
 
 
 // About Section Repeater Fields
@@ -297,6 +301,130 @@ new \Kirki\Field\Repeater(
 					'lni-microphone' => esc_html__( 'Microphone', 'stacky' ),
 					'lni-users' => esc_html__( 'User', 'stacky' ),
 					'lni-medall-alt' => esc_html__( 'Medal', 'stacky' ),
+				]
+			],
+		],
+	]
+);
+
+
+// Services Section
+new \Kirki\Section(
+	'stacky_services',
+	[
+		'title'       => esc_html__( 'Services Section', 'stacky' ),
+		'description' => esc_html__( 'Stacky Services Section', 'stacky' ),
+		'panel'       => 'stacky_panel',
+		'priority'    => 180,
+	]
+);
+
+// Service Section Heading
+new \Kirki\Field\Text(
+	[
+		'settings' => 'service_heading_setting',
+		'label'    => esc_html__( 'Service Main Heading', 'stacky' ),
+		'section'  => 'stacky_services',
+		'default'  => esc_html__( 'OUR SERVICES', 'stacky' ),
+		'priority' => 10,
+		'transport' => 'postMessage',
+		'js_vars' => array(
+			array(
+				'element' => '.section-title',
+				'function' => 'html'
+			)
+		)
+	]
+);
+
+// Service Section Content for Heading
+new \Kirki\Field\Textarea(
+	[
+		'settings'    => 'service_content_setting',
+		'label'       => esc_html__( 'Services Content', 'stacky' ),
+		'section'     => 'stacky_services',
+		'default'     => esc_html__( 'A desire to help and empower others between community contributors in technology began to grow in 2023.', 'stacky' ),
+		'transport' => 'postMessage',
+		'js_vars' => array(
+			array(
+				'element' => '.section-header p',
+				'function' => 'html'
+			)
+		)
+	]
+);
+
+
+// Services Section Repeater Fields
+new \Kirki\Field\Repeater(
+	[
+		'settings'     => 'service_section_repeater',
+		'label'        => esc_html__( 'Company Services', 'stacky' ),
+		'section'      => 'stacky_services',
+		'priority'     => 10,
+		'row_label'    => [
+			'type'  => 'field',
+			'value' => esc_html__( 'Services Items', 'stacky' ),
+			'field' => 's_item_text',
+		],
+		'button_label' => esc_html__( 'Add new item', 'stacky' ),
+		'default'      => [
+			[
+				's_item_text'   => esc_html__( 'CONTENT WRITING', 'stacky' ),
+				's_item_content'    => 'Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia con- sequuntur magni dolores',
+				's_item_icon' => 'lni-pencil'
+			],
+			[
+				's_item_text'   => esc_html__( 'DIGITAL MARKETING', 'stacky' ),
+				's_item_content'    => 'Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia con- sequuntur magni dolores',
+				's_item_icon' => 'lni-briefcase'
+			],
+			[
+				's_item_text'   => esc_html__( 'WEB DEVELOPMENT', 'stacky' ),
+				's_item_content'    => 'Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia con- sequuntur magni dolores',
+				's_item_icon' => 'lni-cog'
+			],
+			[
+				's_item_text'   => esc_html__( 'IOS & ANDROID', 'stacky' ),
+				's_item_content'    => 'Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia con- sequuntur magni dolores',
+				's_item_icon' => 'lni-mobile'
+			],
+			[
+				's_item_text'   => esc_html__( 'UI/UX DESIGN', 'stacky' ),
+				's_item_content'    => 'Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia con- sequuntur magni dolores',
+				's_item_icon' => 'lni-layers'
+			],
+			[
+				's_item_text'   => esc_html__( 'BRANDING & IDENTITY', 'stacky' ),
+				's_item_content'    => 'Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia con- sequuntur magni dolores',
+				's_item_icon' => 'lni-rocket'
+			],
+		],
+		'fields'       => [
+			's_item_text'   => [
+				'type'        => 'text',
+				'label'       => esc_html__( 'Item Name', 'stacky' ),
+				'description' => esc_html__( '', 'stacky' ),
+				'default'     => '',
+			],
+			's_item_content'    => [
+				'type'        => 'textarea',
+				'label'       => esc_html__( 'Item Description', 'stacky' ),
+				'description' => esc_html__( '', 'stacky' ),
+				'default'     => '',
+			],
+			's_item_icon'    => [
+				'type'        => 'select',
+				'label'       => esc_html__( 'Item Icon', 'stacky' ),
+				'description' => esc_html__( '', 'stacky' ),
+				'default'     => '',
+				'choices'     => [
+					'lni-pencil' => esc_html__( 'Pencil', 'stacky' ),
+					'lni-briefcase' => esc_html__( 'Briefcase', 'stacky' ),
+					'lni-cog' => esc_html__( 'Cog', 'stacky' ),
+					'lni-mobile' => esc_html__( 'Mobile', 'stacky' ),
+					'lni-layers' => esc_html__( 'Layers', 'stacky' ),
+					'lni-rocket' => esc_html__( 'Rocket', 'stacky' ),
 				]
 			],
 		],
