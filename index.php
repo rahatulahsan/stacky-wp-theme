@@ -17,75 +17,7 @@
 
     <?php get_template_part('/templates/counter'); ?>
 
-    <!-- Pricing section Start --> 
-    <section id="pricing" class="section-padding bg-gray">
-      <div class="container">
-        <div class="section-header text-center">
-          <h2 class="section-title wow fadeInDown" data-wow-delay="0.3s">Best Pricing</h2>
-          <p>A desire to help and empower others between community contributors in technology <br> began to grow in 2020.</p>
-        </div>
-        <div class="row">
-          <div class="col-lg-4 col-md-6 col-xs-12">
-            <div class="table wow fadeInLeft" data-wow-delay="1.2s">
-              <div class="title">
-                <h3>Basic</h3>
-              </div>
-              <div class="pricing-header">
-                <p class="price-value">$12.90<span>/ Month</span></p>
-              </div>
-              <ul class="description">
-                <li>Business Analyzing</li>
-                <li>24/7 Tech Suport</li>
-                <li>Operational Excellence</li>
-                <li>Business Idea Ready</li>
-                <li>2 Database</li>
-                <li>Customer Support</li>
-              </ul>
-              <button class="btn btn-common">Get It</button>
-            </div> 
-          </div>
-          <div class="col-lg-4 col-md-6 col-xs-12 active">
-            <div class="table wow fadeInUp" id="active-tb" data-wow-delay="1.2s">
-              <div class="title">
-                <h3>Profesional</h3>
-              </div>
-               <div class="pricing-header">
-                  <p class="price-value">$49.90<span>/ Month</span></p>
-               </div>
-              <ul class="description">
-                <li>Business Analyzing</li>
-                <li>24/7 Tech Suport</li>
-                <li>Operational Excellence</li>
-                <li>Business Idea Ready</li>
-                <li>2 Database</li>
-                <li>Customer Support</li>
-              </ul>
-              <button class="btn btn-common">Get It</button>
-           </div> 
-          </div>
-          <div class="col-lg-4 col-md-6 col-xs-12">
-            <div class="table wow fadeInRight" data-wow-delay="1.2s">
-              <div class="title">
-                <h3>Expert</h3>
-              </div>
-               <div class="pricing-header">
-                  <p class="price-value">$89.90<span>/ Month</span></p>
-               </div>
-              <ul class="description">
-                <li>Business Analyzing</li>
-                <li>24/7 Tech Suport</li>
-                <li>Operational Excellence</li>
-                <li>Business Idea Ready</li>
-                <li>2 Database</li>
-                <li>Customer Support</li>
-              </ul>
-              <button class="btn btn-common">Get It</button>
-            </div> 
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- Pricing Table Section End -->
+    <?php get_template_part('/templates/pricing'); ?>
 
     <?php get_template_part('/templates/skills'); ?>
     
@@ -172,79 +104,7 @@
 
     <?php get_template_part('/templates/clients'); ?>
 
-    <!-- Contact Section Start -->
-    <section id="contact" class="section-padding">    
-      <div class="container">
-        <div class="row contact-form-area wow fadeInUp" data-wow-delay="0.4s">          
-          <div class="col-md-6 col-lg-6 col-sm-12">
-            <div class="contact-block">
-              <form id="contactForm">
-                <div class="row">
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      <input type="text" class="form-control" id="name" name="name" placeholder="Name" required data-error="Please enter your name">
-                      <div class="help-block with-errors"></div>
-                    </div>                                 
-                  </div>
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      <input type="text" placeholder="Email" id="email" class="form-control" name="email" required data-error="Please enter your email">
-                      <div class="help-block with-errors"></div>
-                    </div> 
-                  </div>
-                   <div class="col-md-12">
-                    <div class="form-group">
-                      <input type="text" placeholder="Subject" id="msg_subject" class="form-control" required data-error="Please enter your subject">
-                      <div class="help-block with-errors"></div>
-                    </div>
-                  </div>
-                  <div class="col-md-12">
-                    <div class="form-group"> 
-                      <textarea class="form-control" id="message" placeholder="Your Message" rows="5" data-error="Write your message" required></textarea>
-                      <div class="help-block with-errors"></div>
-                    </div>
-                    <div class="submit-button">
-                      <button class="btn btn-common" id="form-submit" type="submit">Send Message</button>
-                      <div id="msgSubmit" class="h3 text-center hidden"></div> 
-                      <div class="clearfix"></div> 
-                    </div>
-                  </div>
-                </div>            
-              </form>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-6 col-sm-12">
-            <div class="contact-right-area wow fadeIn">
-              <div class="contact-title">
-                <h1><?php echo esc_html(get_theme_mod('contact_heading_setting')); ?></h1>
-                <p><?php echo esc_html(get_theme_mod('contact_content_setting')); ?></p>
-              </div>
-              <h2>Contact Us</h2>
-              <div class="contact-right">
-                <div class="single-contact">
-                  <div class="contact-icon">
-                    <i class="lni-map-marker"></i>
-                  </div>
-                  <p><?php echo esc_html(get_theme_mod('contact_address_setting')); ?></p>
-                </div>
-                <div class="single-contact">
-                  <div class="contact-icon">
-                    <i class="lni-envelope"></i>
-                  </div>
-                  <p><?php echo esc_html(get_theme_mod('contact_email_setting')); ?></a></p>
-                </div>
-                <div class="single-contact">
-                  <div class="contact-icon">
-                    <i class="lni-phone-handset"></i>
-                  </div>
-                  <p><?php echo esc_html(get_theme_mod('contact_phone_setting')); ?></a></p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div> 
-    </section>
-    <!-- Contact Section End -->
+    <?php get_template_part('/templates/contact'); ?>
+
     
   <?php get_footer(); ?>

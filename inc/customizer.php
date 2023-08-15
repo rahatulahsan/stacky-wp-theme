@@ -1139,3 +1139,38 @@ new \Kirki\Field\Editor(
 		'default'     => '',
 	]
 );
+
+
+
+// Pricing Table Section
+new \Kirki\Section(
+	'stacky_pricing',
+	[
+		'title'       => esc_html__( 'Pricing Section', 'stacky' ),
+		'description' => esc_html__( 'Please setup pricing table from the dashboard', 'stacky' ),
+		'panel'       => 'stacky_panel',
+		'priority'    => 210,
+	]
+);
+
+// Pricing Heading
+new \Kirki\Field\Text(
+	[
+		'settings' => 'pricing_heading_setting',
+		'label'    => esc_html__( 'Pricing Section Heading', 'stacky' ),
+		'section'  => 'stacky_pricing',
+		'default'  => esc_html__( 'BEST PRICING', 'stacky' ),
+		'priority' => 10,
+	]
+);
+
+// Pricing Section Content
+new \Kirki\Field\Textarea(
+	[
+		'settings'    => 'pricing_content_setting',
+		'label'       => esc_html__( 'Pricing Section Content', 'stacky' ),
+		'section'     => 'stacky_pricing',
+		'default'     => esc_html__( 'A desire to help and empower others between community contributors in technology began to grow in 2028.', 'stacky' ),
+	]
+);
+

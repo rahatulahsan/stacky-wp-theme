@@ -52,3 +52,40 @@ function stacky_assets(){
 }
 
 add_action('wp_enqueue_scripts', 'stacky_assets');
+
+
+function stacky_post_type() {
+    $labels = array(
+        'name'                  => _x( 'Pricing Tables', 'Post type general name', 'stacky' ),
+        'singular_name'         => _x( 'Pricing Table', 'Post type singular name', 'stacky' ),
+        'menu_name'             => _x( 'Pricing Tables', 'Admin Menu text', 'stacky' ),
+        'name_admin_bar'        => _x( 'Pricing Table', 'Add New on Toolbar', 'stacky' ),
+        'add_new'               => __( 'Add New', 'stacky' ),
+        'add_new_item'          => __( 'Add New table', 'stacky' ),
+        'new_item'              => __( 'New table', 'stacky' ),
+        'edit_item'             => __( 'Edit table', 'stacky' ),
+        'view_item'             => __( 'View table', 'stacky' ),
+        'all_items'             => __( 'All tables', 'stacky' ),
+        
+    );     
+    $args = array(
+        'labels'             => $labels,
+        'description'        => 'Pricing Tables',
+        'public'             => true,
+        'publicly_queryable' => false,
+        'show_ui'            => true,
+        'show_in_menu'       => true,
+        'query_var'          => true,
+        'rewrite'            => array( 'slug' => 'pricing-table' ),
+        'capability_type'    => 'post',
+        'has_archive'        => true,
+        'hierarchical'       => false,
+        'menu_position'      => 20,
+        'supports'           => array( 'title' ),
+        'show_in_rest'       => false,
+        'menu_icon'          => 'dashicons-money-alt'
+    );
+     
+    register_post_type( 'Pricing Table', $args );
+}
+add_action( 'init', 'stacky_post_type' );
