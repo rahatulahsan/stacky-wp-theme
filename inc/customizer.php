@@ -804,11 +804,11 @@ new \Kirki\Section(
 );
 
 
-// Skill Heading
+// Work Heading
 new \Kirki\Field\Text(
 	[
 		'settings' => 'work_heading_setting',
-		'label'    => esc_html__( 'Wiork Section Heading', 'stacky' ),
+		'label'    => esc_html__( 'Work Section Heading', 'stacky' ),
 		'section'  => 'stacky_work',
 		'default'  => esc_html__( 'OUR WORKS', 'stacky' ),
 		'priority' => 10,
@@ -937,5 +937,205 @@ new \Kirki\Field\Repeater(
 				],
 			],
 		],
+	]
+);
+
+
+
+// Client Section
+new \Kirki\Section(
+	'stacky_clients',
+	[
+		'title'       => esc_html__( 'Clients Section', 'stacky' ),
+		'description' => esc_html__( 'Stacky clients Section', 'stacky' ),
+		'panel'       => 'stacky_panel',
+		'priority'    => 250,
+	]
+);
+
+// Client Heading
+new \Kirki\Field\Text(
+	[
+		'settings' => 'client_heading_setting',
+		'label'    => esc_html__( 'Client Section Heading', 'stacky' ),
+		'section'  => 'stacky_clients',
+		'default'  => esc_html__( 'NOTABLE CLIENTS', 'stacky' ),
+		'priority' => 10,
+	]
+);
+
+// Client Section Content
+new \Kirki\Field\Textarea(
+	[
+		'settings'    => 'client_content_setting',
+		'label'       => esc_html__( 'Client Section Content', 'stacky' ),
+		'section'     => 'stacky_clients',
+		'default'     => esc_html__( 'Over the last 20 years, we have helped and guided organisations to achieve outstanding results', 'stacky' ),
+	]
+);
+
+// CLient Section Image
+new \Kirki\Field\Repeater(
+	[
+		'settings'     => 'client_repeater_setting',
+		'label'        => esc_html__( 'Clients', 'stacky' ),
+		'section'      => 'stacky_clients',
+		'priority'     => 10,
+		'row_label'    => [
+			'type'  => 'field',
+			'value' => esc_html__( 'Client', 'stacky' ),
+			'field' => '',
+		],
+		'button_label' => esc_html__( 'Add new client', 'stacky' ),
+		'fields'       => [
+			'client_image'   => [
+				'type'        => 'image',
+				'label'       => esc_html__( 'Add Client Image', 'stacky' ),
+				'description' => esc_html__( '', 'stacky' ),
+				'default'     => '',
+				'choices'     => [
+					'save_as' => 'array',
+				],
+			],
+		],
+	]
+);
+
+
+
+// Contact Section
+new \Kirki\Section(
+	'stacky_contacts',
+	[
+		'title'       => esc_html__( 'Contact Section', 'stacky' ),
+		'description' => esc_html__( 'Please configure the form from Contact Form 7', 'stacky' ),
+		'panel'       => 'stacky_panel',
+		'priority'    => 260,
+	]
+);
+
+// Contact Heading
+new \Kirki\Field\Text(
+	[
+		'settings' => 'contact_heading_setting',
+		'label'    => esc_html__( 'Client Contact Heading', 'stacky' ),
+		'section'  => 'stacky_contacts',
+		'default'  => esc_html__( 'We are a friendly bunch..', 'stacky' ),
+		'priority' => 10,
+	]
+);
+
+// Contact Section Content
+new \Kirki\Field\Textarea(
+	[
+		'settings'    => 'contact_content_setting',
+		'label'       => esc_html__( 'Contact Section Content', 'stacky' ),
+		'section'     => 'stacky_contacts',
+		'default'     => esc_html__( 'We create projects for companies and startups with a passion for quality', 'stacky' ),
+	]
+);
+
+// Contact Address
+new \Kirki\Field\Text(
+	[
+		'settings' => 'contact_address_setting',
+		'label'    => esc_html__( 'Address', 'stacky' ),
+		'section'  => 'stacky_contacts',
+		'default'  => esc_html__( '', 'stacky' ),
+		'priority' => 10,
+	]
+);
+
+// Contact Email
+new \Kirki\Field\Text(
+	[
+		'settings' => 'contact_email_setting',
+		'label'    => esc_html__( 'Email', 'stacky' ),
+		'section'  => 'stacky_contacts',
+		'default'  => esc_html__( '', 'stacky' ),
+		'priority' => 10,
+	]
+);
+
+// Contact Phone
+new \Kirki\Field\Text(
+	[
+		'settings' => 'contact_phone_setting',
+		'label'    => esc_html__( 'Phone', 'stacky' ),
+		'section'  => 'stacky_contacts',
+		'default'  => esc_html__( '', 'stacky' ),
+		'priority' => 10,
+	]
+);
+
+// Footer Section
+new \Kirki\Section(
+	'stacky_footer',
+	[
+		'title'       => esc_html__( 'Footer Section', 'stacky' ),
+		'description' => esc_html__( '', 'stacky' ),
+		'panel'       => 'stacky_panel',
+		'priority'    => 270,
+	]
+);
+
+// Footer Logo
+new \Kirki\Field\Image(
+	[
+		'settings'    => 'footer_logo_setting',
+		'label'       => esc_html__( 'Footer Logo', 'stacky' ),
+		'description' => esc_html__( '', 'stacky' ),
+		'section'     => 'stacky_footer',
+		'default'     => '',
+		'choices'     => [
+			'save_as' => 'array',
+		],
+	]
+);
+
+// Footer Social
+new \Kirki\Field\Repeater(
+	[
+		'settings'     => 'footer_social_repeater_setting',
+		'label'        => esc_html__( 'Social Connections', 'stacky' ),
+		'section'      => 'stacky_footer',
+		'priority'     => 10,
+		'row_label'    => [
+			'type'  => 'field',
+			'value' => esc_html__( 'Social', 'stacky' ),
+			'field' => '',
+		],
+		'button_label' => esc_html__( 'Add new connection', 'stacky' ),
+		'fields'       => [
+			'f_social'   => [
+				'type'        => 'select',
+				'label'       => esc_html__( 'Select Social Connection', 'stacky' ),
+				'description' => esc_html__( '', 'stacky' ),
+				'default'     => '',
+				'choices'     => [
+					'lni-facebook-filled' => esc_html__( 'Facebook', 'stacky' ),
+					'lni-twitter-filled' => esc_html__( 'Twitter', 'stacky' ),
+					'lni-instagram-filled' => esc_html__( 'Instagram', 'stacky' ),
+					'lni-linkedin-filled' => esc_html__( 'Linkedin', 'stacky' ),
+				],
+			],
+			's_url'    => [
+				'type'        => 'url',
+				'label'       => esc_html__( 'Social URL', 'stacky' ),
+				'description' => esc_html__( '', 'stacky' ),
+				'default'     => '',
+			],
+		],
+	]
+);
+
+// Footer Copyright
+new \Kirki\Field\Editor(
+	[
+		'settings'    => 'f_copyright_setting',
+		'label'       => esc_html__( 'Copyright', 'stacky' ),
+		'description' => esc_html__( '', 'stacky' ),
+		'section'     => 'stacky_footer',
+		'default'     => '',
 	]
 );

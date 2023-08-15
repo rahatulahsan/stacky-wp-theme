@@ -170,39 +170,7 @@
     </section>
     <!-- blog Section End -->
 
-    <!-- Clients Section Start -->
-    <div id="clients" class="section-padding bg-gray">
-      <div class="container">
-        <div class="section-header text-center">
-          <h2 class="section-title wow fadeInDown" data-wow-delay="0.3s">NOTABLE CLIENTS</h2>
-          <p>Over the last 20 years, we have helped and guided organisations to achieve outstanding results</p>
-        </div>
-        <div class="row text-align-">
-          <div class="col-lg-3 col-md-3 col-xs-12 wow fadeInUp" data-wow-delay="0.3s">
-            <div class="client-item-wrapper">
-              <img class="img-fluid" src="<?php echo get_template_directory_uri(  ); ?>/assets/img/clients/img1.png" alt="">
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-3 col-xs-12 wow fadeInUp" data-wow-delay="0.6s">
-            <div class="client-item-wrapper">
-              <img class="img-fluid" src="<?php echo get_template_directory_uri(  ); ?>/assets/img/clients/img2.png" alt="">
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-3 col-xs-12 wow fadeInUp" data-wow-delay="0.9s">
-            <div class="client-item-wrapper">
-              <img class="img-fluid" src="<?php echo get_template_directory_uri(  ); ?>/assets/img/clients/img3.png" alt="">
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-3 col-xs-12 wow fadeInUp" data-wow-delay="1.2s">
-            <div class="client-item-wrapper">
-              <img class="img-fluid"  src="<?php echo get_template_directory_uri(  ); ?>/assets/img/clients/img4.png" alt="">
-            </div>
-          </div>
-          
-        </div>
-      </div>
-    </div>
-    <!-- Clients Section End -->
+    <?php get_template_part('/templates/clients'); ?>
 
     <!-- Contact Section Start -->
     <section id="contact" class="section-padding">    
@@ -248,8 +216,8 @@
           <div class="col-md-6 col-lg-6 col-sm-12">
             <div class="contact-right-area wow fadeIn">
               <div class="contact-title">
-                <h1>We're a friendly bunch..</h1>
-                <p>We create projects for companies and startups with a passion for quality</p>
+                <h1><?php echo esc_html(get_theme_mod('contact_heading_setting')); ?></h1>
+                <p><?php echo esc_html(get_theme_mod('contact_content_setting')); ?></p>
               </div>
               <h2>Contact Us</h2>
               <div class="contact-right">
@@ -257,19 +225,19 @@
                   <div class="contact-icon">
                     <i class="lni-map-marker"></i>
                   </div>
-                  <p>ADDRESS: 28 Green Tower, New York City, USA</p>
+                  <p><?php echo esc_html(get_theme_mod('contact_address_setting')); ?></p>
                 </div>
                 <div class="single-contact">
                   <div class="contact-icon">
                     <i class="lni-envelope"></i>
                   </div>
-                  <p><a href="#">Email:  contact@stuck.com</a></p>
+                  <p><?php echo esc_html(get_theme_mod('contact_email_setting')); ?></a></p>
                 </div>
                 <div class="single-contact">
                   <div class="contact-icon">
                     <i class="lni-phone-handset"></i>
                   </div>
-                  <p><a href="#">Phone:  +84 846 250 592</a></p>
+                  <p><?php echo esc_html(get_theme_mod('contact_phone_setting')); ?></a></p>
                 </div>
               </div>
             </div>
