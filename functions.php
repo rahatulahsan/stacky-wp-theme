@@ -13,6 +13,8 @@ function stacky_theme_setup(){
     add_theme_support('html5', array('comment-form', 'search-form'));
     add_theme_support( 'post-formats', array( 'aside', 'gallery', 'image', 'video', 'quote', 'audio', 'link' ) );
 
+    register_nav_menu( 'primary', __('Primary Menu', 'stacky') );
+
 }   
 
 add_action('after_setup_theme', 'stacky_theme_setup');
@@ -89,3 +91,11 @@ function stacky_post_type() {
     register_post_type( 'Pricing Table', $args );
 }
 add_action( 'init', 'stacky_post_type' );
+
+// Filetr to add custom class in menu link
+
+function stacky_modify_menu_class($ulclass) {
+    return preg_replace('/<a /', '<a class="nav-link"', $ulclass);
+}
+
+add_filter('wp_nav_menu', 'stacky_modify_menu_class');
