@@ -304,7 +304,13 @@ new \Kirki\Field\Repeater(
 				]
 			],
 		],
+
+		'choices' => [
+			'limit' => 3
+		],
 	]
+
+	
 );
 
 
@@ -1171,6 +1177,40 @@ new \Kirki\Field\Textarea(
 		'label'       => esc_html__( 'Pricing Section Content', 'stacky' ),
 		'section'     => 'stacky_pricing',
 		'default'     => esc_html__( 'A desire to help and empower others between community contributors in technology began to grow in 2028.', 'stacky' ),
+	]
+);
+
+
+
+// Blog Section
+new \Kirki\Section(
+	'stacky_blogs',
+	[
+		'title'       => esc_html__( 'Blog Section', 'stacky' ),
+		'description' => esc_html__( 'Please create blog posts from dashboard', 'stacky' ),
+		'panel'       => 'stacky_panel',
+		'priority'    => 250,
+	]
+);
+
+// Blog Section Heading
+new \Kirki\Field\Text(
+	[
+		'settings' => 'blog_heading_setting',
+		'label'    => esc_html__( 'Blog Section Heading', 'stacky' ),
+		'section'  => 'stacky_blogs',
+		'default'  => esc_html__( 'LATEST BLOG', 'stacky' ),
+		'priority' => 10,
+	]
+);
+
+// Blog Section Content
+new \Kirki\Field\Textarea(
+	[
+		'settings'    => 'blog_content_setting',
+		'label'       => esc_html__( 'Blog Section Content', 'stacky' ),
+		'section'     => 'stacky_blogs',
+		'default'     => esc_html__( 'A desire to help and empower others between community contributors in technology began to grow in 2020.', 'stacky' ),
 	]
 );
 
