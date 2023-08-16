@@ -104,14 +104,14 @@ add_filter('wp_nav_menu', 'stacky_modify_menu_class');
 
 
 //Moving Comment form at the bottom for Blog
-function philosophy_move_comment_field_to_bottom( $fields ) {
+function stacky_move_comment_field_to_bottom( $fields ) {
     $comment_field = $fields['comment'];
     unset( $fields['comment'] );
     $fields['comment'] = $comment_field;
     return $fields;
     }
      
-add_filter( 'comment_form_fields', 'philosophy_move_comment_field_to_bottom');
+add_filter( 'comment_form_fields', 'stacky_move_comment_field_to_bottom');
 
 function ea_comment_textarea_placeholder( $args ) {
 	$args['comment_field']  = str_replace( 'textarea', 'textarea placeholder="Your Message"', $args['comment_field'] );
@@ -132,3 +132,17 @@ function be_comment_form_fields( $fields ) {
 	return $fields;
 }
 add_filter( 'comment_form_default_fields', 'be_comment_form_fields' );
+
+
+function stacky_sidebar_widget(){
+    register_sidebar( array(
+		'name'          => __( 'Blog Sidebar', 'stacky' ),
+		'id'            => 'blog-sidebar',
+		'description'   => __( 'Widgets in this area will be shown in single blog page.', 'stacky' ),
+		'before_widget' => '<div id="%1$s" class="col-block %2$s single-widget">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h4 class=".widget-latest-post">',
+		'after_title'   => '</h4>',
+	) );
+}
+add_action('widgets_init', 'stacky_sidebar_widget');

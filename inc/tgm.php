@@ -96,6 +96,12 @@ function stacky_register_required_plugins() {
 			'required'  => false,
 		),
 
+		array(
+			'name'      => 'Smart Recent Posts Widget',
+			'slug'      => 'smart-recent-posts-widget',
+			'required'  => true,
+		),
+
 
 
 	);

@@ -166,3 +166,36 @@ p.comment-form-cookies-consent {
     margin-bottom: 10px;
     border-radius: 0;
 }
+
+/* Sidebar Styles for Search*/
+input.search-field {
+    border: 1px solid #f7f7f7;
+    padding-left: 20px;
+}
+
+input.search-submit {
+    border: none!important;
+    background: #3d60f4!important;
+    color: #fff;
+    padding: 2px 18px;
+}
+
+img.srpw-thumbnail.wp-post-image {
+    width: 60px;
+    height: 60px;
+}
+
+a.srpw-title {
+    color: #000;
+    font-weight: bold;
+}
+
+h4.\.widget-latest-post {
+    font-size: 20px;
+    border-bottom: 3px double #ddd;
+}
+
+li.cat-item a {
+    color: #b7b7b7;
+}
+
