@@ -15,3 +15,154 @@ Text Domain: stacky
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
 */
+
+.comment-form input[type="checkbox"] {
+    display: none;
+}
+.comment-form label {
+    display: none;
+}
+.comment-form input[type="text"], input[type="email"],input[type="url"], textarea{
+    width: 100%;
+    margin-bottom: 10px;
+    border: 1px solid #efeded;
+    padding: 10px;
+
+}
+.comment-form input[type="submit"] {
+    background: #3d60f4;
+    color: #fff;
+    max-width: 70%;
+    height: 3rem;
+    border-radius: 50px;
+    border: none;
+    padding: 0px 20px;
+    pointer: cursor;
+    text-transform: uppercase;
+}
+
+
+
+/* ## Comments
+--------------------------------------------- */
+.comment-respond,
+.entry-pings,
+.entry-comments {
+    color: #444;
+    padding: 20px 45px 40px 45px;
+    overflow: hidden;
+    border-left: 4px solid #444;
+}
+.entry-comments h3{
+    font-size: 30px;
+    margin-bottom: 30px;
+}
+.comment-respond h3,
+.entry-pings h3{
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+.comment-respond {
+    padding-bottom: 5%;
+    margin: 20px 1px 20px 1px;
+        border-left: none !important;
+}
+.comment-header {
+    color: #adaeb3;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+.comment-header cite a {
+    border: none;
+    font-style: normal;
+    font-size: 16px;
+    font-weight: bold;
+}
+.comment-header .comment-meta a {
+    border: none;
+    color: #adaeb3;
+}
+li.comment {
+    border-right: none;
+}
+.comment-content {
+    clear: both;
+    overflow: hidden;
+}
+.comment-list li {
+    font-size: 14px;
+    padding: 20px 30px 20px 20px;
+    list-style: none;
+}
+.comment-list .children {
+    margin-top: 40px;
+    border: 1px solid #ccc;
+}
+.comment-list li li {
+    background-color: #f5f5f6;
+}
+.comment-list li li li {
+    background-color: #fff;
+}
+
+
+comment-respond label {
+    display: none;
+    margin-right: 12px;
+}
+.entry-comments .comment-author {
+    margin-bottom: 0;
+    position: relative;
+}
+.entry-comments .comment-author img {
+    border-radius: 50%;
+    border: 5px solid #fff;
+    left: -80px;
+    top: -5px;
+    position: absolute;
+    width: 60px;
+}
+.entry-pings .reply {
+    display: none;
+}
+
+.form-allowed-tags {
+    background-color: #f5f5f5;
+    font-size: 16px;
+    padding: 24px;
+}
+.comment-reply-link{
+    cursor: pointer;
+    background-color: #444;
+    border: none;
+    border-radius: 3px;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 300;
+    letter-spacing: 1px;
+    padding: 4px 10px 4px;
+    text-transform: uppercase;
+    width: auto;
+}
+.comment-reply-link:hover{
+    color: #fff;
+}
+.comment-notes{
+    display:none;   
+}
+p.comment-form-cookies-consent {
+    display: none;
+}
+#comment{
+    font-size: 16px;
+    color: #000;
+    height: 170px;
+    width: 100%;
+    background-color: #f7f7f7;
+    padding: 16px 30px 30px;
+    border: 1px solid #dee2e6;
+    border-radius: 0px;
+    outline: none;
+    margin-bottom: 10px;
+    border-radius: 0;
+}

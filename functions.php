@@ -14,6 +14,7 @@ function stacky_theme_setup(){
     add_theme_support( 'post-formats', array( 'aside', 'gallery', 'image', 'video', 'quote', 'audio', 'link' ) );
 
     register_nav_menu( 'primary', __('Primary Menu', 'stacky') );
+    register_nav_menu( 'secondary', __('Secondary Menu', 'stacky') );
 
 }   
 
@@ -99,3 +100,35 @@ function stacky_modify_menu_class($ulclass) {
 }
 
 add_filter('wp_nav_menu', 'stacky_modify_menu_class');
+
+
+
+//Moving Comment form at the bottom for Blog
+function philosophy_move_comment_field_to_bottom( $fields ) {
+    $comment_field = $fields['comment'];
+    unset( $fields['comment'] );
+    $fields['comment'] = $comment_field;
+    return $fields;
+    }
+     
+add_filter( 'comment_form_fields', 'philosophy_move_comment_field_to_bottom');
+
+function ea_comment_textarea_placeholder( $args ) {
+	$args['comment_field']  = str_replace( 'textarea', 'textarea placeholder="Your Message"', $args['comment_field'] );
+	return $args;
+}
+add_filter( 'comment_form_defaults', 'ea_comment_textarea_placeholder' );
+
+/**
+ * Comment Form Fields Placeholder
+ *
+ */
+function be_comment_form_fields( $fields ) {
+	foreach( $fields as &$field ) {
+		$field = str_replace( 'id="author"', 'id="author" placeholder="Your Name"', $field );
+		$field = str_replace( 'id="email"', 'id="email" placeholder="Your Email"', $field );
+		$field = str_replace( 'id="url"', 'id="url" placeholder="Website"', $field );
+	}
+	return $fields;
+}
+add_filter( 'comment_form_default_fields', 'be_comment_form_fields' );
